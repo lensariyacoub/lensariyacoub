@@ -1,0 +1,771 @@
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+\geometry{margin=1.5cm} % Marges de 2.5 cm de chaque côté
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[french]{babel} % Utilisation de l'option 'french' au lieu de 'frenchb'
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{times}
+\usepackage{natbib}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+
+
+
+
+\title{Titre de votre document}
+\author{Lensari Yaakoub}
+\date{\today}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\begin{tikzpicture}[remember picture,overlay]
+			
+			\node at (current page.center) [yshift=2cm] {\includegraphics[width=1\textwidth]{dsn.PNG}};
+			
+			\node[fill=blue!30 , opacity = 70 ,text=black, minimum width=1.5\paperwidth, minimum height=0.3\paperheight, anchor=center] at (current page.center)[anchor=center, yshift=-10cm] {
+				
+				
+				\begin{minipage}{0.95\paperwidth}
+					
+					\begin{center}
+						{ \textcolor{blue}{{\Huge Mémoire de master 1 }}     \par}
+					\end{center}
+				
+				\vspace{0.5cm}
+				{ \textcolor{blue}{\LARGE{Thème : Les facteurs de risques affectant la dépression chez les personnes âgées  }}     \par}
+					
+					\raggedright
+					\vspace{0.3cm}
+					{ \textcolor{black}{\LARGE{M1 Ingénierie des données et Évaluations Économétriques  }}     \par} 
+					
+					
+					
+					\vspace{1cm}
+					
+					\raggedright
+					{\textcolor{blue}{\large\itshape Réalisé par : Lensari Yaakoub} \par}
+					\vspace{0.1cm}
+					{\textcolor{blue}{\large\itshape Enseignante Responsable : Enareta KURTBEGU  
+						} \par}
+					\raggedright
+					\vspace{2cm}
+					{ \textcolor{white}{\textbf{{Université d'Angers} }}     \par}
+					
+					
+			\end{minipage}  };
+			
+			
+		\end{tikzpicture}
+	\end{titlepage}
+	
+	\newpage
+	
+	\tableofcontents
+	\listoftables
+	\listtablename
+	\listfigurename
+	
+	\newpage
+	
+
+		
+		
+		\section{\textit{Introduction}}
+		
+		La dépression constitue un problème de santé majeure affectant des millions de personnes à travers le mondes, accélérer par l’évolution des société vers certains formes qui désintègre progressivement la structure sociale traditionnelle donnant ainsi naissance à des nouvelles normes et modes de structure sociale plus ou moine favorables pour certaines catégories sociales en fonction des pays, cultures et plus particulièrement défavorable dans les pays dites développées.
+		Cependant, bien que ce phénomène ne soit  un problème propre uniquement aux personnes âgées, néanmoins Selon plusieurs études les sujets âgées apparaissent comme la tranche d’âge la plus affectée. Les personnes atteintes par ces pathologies sont souvent mal comprises et mal acceptées par l’entourage  aggravant le pathologique dépressif. \\
+		  
+		D’après \citep{Thomas2017} la dépression avec déficit dite dysexécutif est fréquemment identifiée chez les personnes âgées étant une catégories à part entière des pathologie dépressifs chez les sujets âgées se manifestant par des comportements de repli sur soi, difficultés de planification du quotidien, associant des troubles cognitifs et autres altérations dites  psychomotrices se manifestant par un désintérêt pour l’environnement et l’entourage s’accompagnant d’une relative altération des signe végétatifs.\\
+		
+		Les facteurs de risques  en lien avec la  personnalité, genre et la vie relationnelle se révèlent comme déterminants dans les comportements dépressifs chez les personnes âgées.\\
+		Ce mémoire, vise à explorer les facteurs de risques affectant la dépression  chez les personnes âgées en Allemagne, exploitant les données de la vague 1 sur les personnes âgées de 60 ans et plus.\\
+		Étant un pays enregistrant le taux de vieillissement parmi les plus élevés, l’Allemagne est le pays européens qui est confronté au sein de l’union aux problème de vieillissements avec une population de 65 ans et plus estimée selon (l’office fédérale de la statistiques allemands) aux alentours de 22.4 \% sur la population total allemandes soient 16,7 millions de personnes, parmi lesquelles 15 \% souffrent de dépression un chiffre qui évoluent dans certains cas aux alentours de 37 \%. \\
+		
+		L'objectif du mémoire est d'analyser les facteurs affectant la dépression chez les personnes à travers une variables dépendantes en fonction de plusieurs autres facteurs de risques explicatives et tenter de mettre en évidence  des liens ou causalités significatives entres les différentes variables. En outre, en se basant sur un certains nombres d'études empiriques et théoriques, j’ai décidé de retenir  les hypothèses ci-dessous dans le cadre de ce mémoire.
+		
+		\begin{itemize}[label=\textbullet]
+			\item Hypothèse 1 : Les personnes de sexe féminin enregistrent une plus grande prévalence à la dépression.\\
+			La première hypothèse stipule que les femmes ont des plus grande chances de tomber en dépression par rapport aux hommes. Cette affirmation est cependant soutenue par les résultats de plusieurs travaux antérieur. Notamment, selon \citep{Yunming2012},Indépendamment de l'age les femmes souffraient d'un trouble dépressif significativement plus souvent que les hommes et d’après \citep{Cousteaux2008}, quel qu’en soit leurs âges  les femmes présentent plus fréquemment un risque de suicide grave et un plus haut niveaux de dépressions  tandis que les hommes sont d’avantage dépendant de l’alcool et se suicide le plus souvent. Cependant l’étude n’a pas donnée des conclusion ou résultats sur le cas des veufs vivant seul, donc la différence suivant le genre exclu la  catégorie veuf vivant seul,\citep{phac_chronic_diseases}, ont arrivé a la conclusion que le taux de prévalence a la dépression qu'il soit majeure ou mineure est nettement plus chez les femmes que chez les hommes au Canada.
+			
+			\item Hypothèse 2 : la multiplications des pathologies diagnostiqué constituent un facteurs de risque affectant la dépression chez les personnes âgées.
+			
+			Notre second hypothèse met en avant la présence des pathologies et maladies chroniques comme facteur de risque dans le dépression chez les sujets âgées. Nous pouvons citer notamment un certains nombres des travaux soutenant cette hypothèse. \cite{Hammami2012} ont démontré l’influence significatives des antécédents d’accidents vasculaires (AVC) dans la déterminations des symptômes dépressifs chez les personnes âgées dans la région de Monastir en Tunisie. En outre \cite{Yunming2012} ont révélés le rôle déterminant Des maladies chroniques sur le niveaux de dépression chez les habitants urbains de XI’AN en chine.  Notamment dès que le nombres de pathologies diagnostiquées chez un individus âgée dépassent trois maladies chroniques,ils se traduisent chez cette individus en un risque de dépression extrêmement élevés et \citep{phac_chronic_diseases}, ils ont observé que la prévalence a la dépression était beaucoup plus élevés chez les personnes atteint de démence que chez ceux qui n'en souffrent pas.
+			
+			\item Hypothèse 3 : L'âge constitue un facteur de risque affectant la dépression chez les personnes âgées.
+			ce derniers hypothèse de notre étude suppose l'existence des liens entre l'age et la prévalence à la dépression. Cependant cette affirmation est conforme avec d'autres études notamment \citep{phac_chronic_diseases} soutiennent que la prévalence à la dépression augmentent avec l'age chez les hommes. En revanche ils ont montré que ce rapport s'inverse, a partir de 75 ans les symptômes dépressifs sont plus important chez les femmes. 
+		\end{itemize}
+	
+	Cependant, pour la suite de ce mémoire, nous allons dans un premier temps évoquer une partie théoriques composée d’une revue de littérature d’un certaines nombres des travaux qui ont déjà été réalisées dans ce domaine et le contexte sociodémographiques de la population allemande sur laquelle porte l’étude.  La seconde partie sera consacrée à la présentations des donnés et aux différentes analyse descriptives de nos données.\\
+	
+	En ce qui concerne la troisième partie, elle sera consacrée à  l'élaboration des modèles économétrique de régression logit pour mettre en évidence les principaux  facteurs déterminants le niveaux de dépression d’un individus.
+	Finalement, nous allons aborder une dernière partie qui sera consacrée à a une synthèse général sur les principaux facteurs impactant la dépression chez les personnes en âge avancée.\\
+	
+	A travers cette méthodologie d'analyse, j'espère fournir des informations significatives et révéler les principaux facteurs de risques en âge avancé sur les symptômes dépressif et ainsi fournir un rapport à la fin susceptible d'être un outil d'aide à la décision.\\
+	Nous utilisons l'outil Stata pour l'ensemble des analyses statistiques et économétriques et l'outil Tex-Studio pour la partie rédaction.
+	
+	\section{Revue de littérature}  
+	
+	Les facteurs de risques affectant la dépression chez les personnes âgées constituent un enjeux majeure de santé qui à attirer par son ampleurs l’attention du monde de la recherche et a fait l’objets d’un certains nombres d’études notamment par plusieurs auteurs dans divers endroits a travers le monde et plus particulièrement  l’Europe, États-Unis, japon, chine et la Corée du sud qui sont parmi les pays enregistrant le plus grand taux de vieillissements au monde.\\
+	\citep{Mosca2016} démontre que la migration des enfants est associée aux symptômes de dépression chez les parents. mettant en évidence le rôle joué par l’isolement et l'éloignement  des personnes  proche dans le développement des symptômes dépressifs chez les sujets âgées, l’émigration d’un enfants cause de la douleur pouvant être source d’une dégradation de la santé mentale chez les parents, et l’effets de l’émigration n’est pas le même et varient suivant le nombre d’enfants le sexe de l’enfant , des parents et de l’existences ou non d’antécédents de pathologie de dépression chez les parents dans un contexte de vieillissement spécifiques à l’Irlande. Autres résultats importants concernent les parents ayant  des antécédents de dépression , avoir un enfant qui émigre est associé à des symptômes dépressifs plus importants. En revanche, les mères ayant des antécédents de dépression qui n’ont pas vu d’enfant émigrer présentaient des symptômes dépressifs plus faibles.\\
+	 \citep{Hammami2012} ont démontré l’influence significatives d’un certaines nombres des facteurs de risques tel  que : le niveaux scolaire , consommation de somnifères, dépendance , les antécédents d’accidents vasculaires (AVC) dans la déterminations  des symptômes dépressifs chez les personnes âgées dans la région de Monastir en Tunisie. Cet étude présente des données confirmant le caractère non ordinaires de la hausse  des symptômes dépressifs chez les personnes en âge avancé notamment l’implications des facteurs externes au vieillissement normal aggravant les symptômes.\\
+	Dans cette article, \cite{Yunming2012} ont révélés le rôle déterminant des facteurs de risques tel que la déterminations d’un niveaux de revenu ayant un impact à la baisse sur le niveaux de dépression ou encore la situation matrimoniale, l'éducation sur le niveaux dépression chez les habitants urbains  de XI’AN en chine. Cependant  ils ont aussi démontré qu'en ce qui concerne les maladies chroniques, généralement, dès que le nombres de pathologies diagnostiquées chez un individus âgée dépasse trois maladies chroniques ça se traduit chez cette individus en un risque de dépression extrêmement élevés. En effet cette étude montre l’impact positif d’un certains niveaux  revenu et l’importance des lien social chez les sujet âgées sur leurs prévalence à la dépression 
+	En outre, \citep{Jongenelis2004}, ont montré que les niveaux de dépression en maison de retraites est trois à quatre fois supérieur au niveaux de dépression des personnes âgées vivant encore en communauté, notamment ils ont soulignées l'existence des facteurs de risques causant des symptômes dépressifs sévères chez cette catégories des population tel que manque de soutien social et solitude jugée responsables de la plupart des symptômes causant la dépression sévères et pathologies dépressifs dite subcliniques,  âge en dessous de 80 ans, certaines déficience et limitations, maladies sont perçus comme responsables des symptômes dépressifs dite modéré.\\ Cependant contrairement à d'autres sources ils n’ont pas réussi a démontré des association significatives entre la prévalence à la dépression et les facteurs de risques démographiques particulièrement le genre.\\
+	Finalement, les différentes études sur la questions autour de la dépression des personnes âgées qui ont  été évoquées, bien qu’ils soient menés dans des pays différents a tous les niveaux, Ils ont été mener sur la même catégorie des population à savoir les personnes en âge avancée et mettent en avant des facteurs de risques proches d’une étude à l’autre et associent des cause de dépression tel que : le manque de soutien social , antécédent de pression, nombres des pathologies diagnostiquées, l’âge, souvent niveaux de revenu , et situation patrimoniaux. Cependant, on’ a constaté que, quel qu’en soit l’endroit bien qu’a échelle différents les personnes en âgées avancées sont les plus exposées aux pathologies dépressifs. En effet, les travaux ci-dessous ont attiré notre attention sur l’étude du vieillissement en  l’Allemagne étant un pays réunissant toutes les conditions a une explosions des symptômes dépressifs. Cependant pour mieux appréhender ce cas, nous allons commencer par la présentations d’un ensembles des données sur les personnes allemands âgées de 60 ans et plus définis comme la catégories la plus vulnérables face à ce phénomène. 
+	
+	\section{méthode d'échantillonnage}
+	
+	\subsection{Définition}
+	La déterminations de la taille de l’échantillons est le nombres d’individus  à inclure suffisamment représentatifs de la population cible pour mener une étude
+	\subsection{Population cible}  
+	Dans le cas de cet étude la populations cible représentent les personnes résidents et de nationalité allemands âgées de 50 ans et plus.
+	\subsection{Taille de la populations}  
+	Correspond au nombres du groupe démographique sur lequel porte l’étude dans ce cas les personnes résidants et de nationalités allemand sont estimés d’après \href{https://www.donneesmondiales.com/}{donnée mondiale} à 18 500 000 habitants soit $22.3 \% $ ur la population total allemands en 2023.
+	
+	\subsection{Niveaux de confiance}
+	
+	 permet de déterminer le niveaux d’exactitude de mes résultats, généralement le niveaux de confiance standard selon le convention est fixé à 95\% déterminant un seuil de tolérance de 5\%.
+	Détermination de la taille de l’échantillons dans ce cas ça revient à déterminer la taille d’échantillons suffisant pour étudier une population estimer d'après \href{https://www.donneesmondiales.com/}{le site données mondiales} à N = 18 500 000 avec un niveaux de confiance de 95 \% et un seuil de tolérance de 5\%, notamment on aura un $Z-SCORE associé = à 1.96$.
+	 
+	
+	\section*{Calcul de la taille de l'échantillon}
+	
+	pour estimer une population de \( N = 18{,}500{,}000 \) avec un niveau de confiance de 95\% et une marge d'erreur de 5\%, nous utilisons la formule suivante :
+	
+	\[
+	n = \frac{N \cdot Z^2 \cdot p \cdot (1-p)}{e^2 \cdot (N-1) + Z^2 \cdot p \cdot (1-p)}
+	\]
+	
+	où :
+	\begin{align*}
+		N & = 18{,}500{,}000 \\
+		Z & = 1.96 \quad \text{(Nivaux de confiance à 95\%)} \\
+		p & = 0.5 \quad \text{(Proportion)} \\
+		e & = 0.05 \quad \text{(marge d'erreur)} \\
+	\end{align*}
+	
+	Nous avons :
+	\[
+	Z^2 = 1.96^2 = 3.8416
+	\]
+	
+	\[
+	p \cdot (1-p) = 0.5 \cdot 0.5 = 0.25
+	\]
+	
+	\[
+	e^2 = 0.05^2 = 0.0025
+	\]
+	
+	En remplaçant ces valeurs dans la formule ci dessous, nous obtenons :
+	\[
+	n = \frac{18{,}500{,}000 \cdot 3.8416 \cdot 0.25}{0.0025 \cdot (18{,}500{,}000 - 1) + 3.8416 \cdot 0.25}
+	\]
+	
+	\[
+	n = \frac{17{,}793{,}200}{46{,}249.5 + 0.9604}
+	\]
+	
+	\[
+	n = \frac{17{,}793{,}200}{46{,}250.4604} \approx 384.16
+	\]
+	
+	Ainsi, nous avons une taille d'échantillons de  :
+	
+	\[
+	n \approx 384
+	\]
+	
+	Ainsi, étudier une population de \( 18{,}500{,}000 \) avec un niveaux de confiance de 95\% et une marge d'erreur toléré de 5\%, la taille d'échantillons qui sera nécessaires est d'environs \( 384 \).
+	
+	
+	
+	
+	\section{Présentation des données} 
+	
+	Les informations utilisées dans ces rapports sont issues de la base easyshare qui est un ensemble de données contenant des informations sur la santé et situation démographique, l'économie etc., sur une multitude de pays. Ces données sont collectées sous formes des vagues allant de la vague 1 a 9. Cependant un échantillon spécifique au sujet d'étude a été sélectionnée, notamment seuls les personnes allemandes âgées de 60 ans et plus, résidant et de nationalité allemande ont été sélectionnées répondant uniquement à la premières vague en revanche un certaines nombres de variables n’ont pas été retenu à cause des faibles pouvoirs explicatif et ou avec des niveaux très élevés des données manquantes. Ainsi, nous avons dans le sous base qui a été sélectionner 16 variables et 1412 observations. \\
+	
+	\textit{Tableau 1 : Nom et signification  des variables}
+	
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Nom} & \textbf{Signification} \\ 
+			\hline
+			dépression & Il indique si le répondant a été triste ou déprimé récemment \\
+			\hline
+			échelle de dépression & échelle des symptômes dépressifs \\
+			\hline
+			Pleures & situation de pleure \\
+			\hline
+			santé physique  & le niveaux de santé physique du répondant sur une échelle allant de 1 à 5  \\
+			\hline
+			problème de sommeil  & problème de sommeil  \\
+			\hline
+			changement d'appétit  & changement d'appétit se traduisant par le bouleversement des habitude alimentaires \\
+			\hline
+			Fatigue & individus étant en état de fatigue anormal ou ayant ou non de l'énergie \\
+			\hline
+			changement d'intérêt  & changement des goûts, d'attrait ou de centre d'intérêt \\
+			\hline
+			\hline    
+			irritabilité & irritabilité \\
+			\hline
+			Annee-educ & nombre d'années d'éducation\\
+			\hline
+			Concentration & indique si les individus rencontrent des difficulté ou non à être dans état de concentration \\
+			\hline
+			Pessimisme  & se réfère aux espoirs du répondant pour l'avenir\\
+			\hline
+			age  & âge du répondant \\
+			\hline
+			sentiment de suicide  & informations sur les sentiments suicidaires\\   
+			\hline
+			Culpabilité & indique si les répondants ont tendance à se blâmer \\
+			\hline
+			Revenu net  & Revenu net que perçoit l'individu  \\
+			\hline
+			Zone de localisation & lieu d'habitation de l'individu  \\
+			\hline
+		\end{tabular}
+		\caption{Présentations des données}
+		\label{tab:1}
+	\end{table}
+	Ces différentes variables ont été sélectionnées dans une multitudes d’autres variables après avoir effectué les premières ajustements de mes variables d’intérêt. En outre ils enregistrent les significativités les plus importants et constituent les meilleures candidats permettant de répondre aux hypothèses de notre études. La partie suivante met en évidence le contexte sociodémographiques actuelle de la population étudier.\\
+	
+	\section{Portrait sociodémographique de la population allemands}  
+	 
+	faisant partie des pays le plus peuplées d’Europe estimée en décembre 2023 à 83 800 000 habitants selon le site \href{https://www.donneesmondiales.com/}{données mondiale}, l'Allemagne connaît une répartition sociodémographiques proche de ces voisins européen avec quelques particularité enregistrant l’une de plus grand taux de vieillissement dans le monde avec une populations d’après \citep{Lestrade2016} âgée de plus de 65 ans estimée à 22.30 \% avec une d'espérance de vie à la naissance pour les homme de 79 ans et 84 ans pour les femmes, avec un taux de fécondité à la baisse depuis 1970, en 2014 le taux de fécondité elle se situe d’après la plateforme \href{https://www.destatis.de/DE/Home/_inhalt.html}{statistisches bundesamt}, autour de 1.39 enfant par femme ce qui est en dessous de seuil de renouvellement de la population  faisant de l’Allemagne un pays avec l’un des taux de vieillissement le plus rapide au monde, favorisant la mise en place d’un certaines nombres de politiques migratoires.\\
+	Cependant, d’après ce même office fédéral allemands de la statistique avec un grand décalages entre le nombres de décès chaque année et le nombres de naissance, le niveaux d’immigration actuelle ne suffit pas à lui seul à résoudre les défis sociaux et économiques actuelle et futur créé ou qui seront créé par le vieillissement accéléré en cours en Allemagne.  
+	
+	\section{Statistiques descriptives}          
+	
+	\subsection{Statistiques univarié}
+	 
+	Le tableau suivant présente les statistiques pour les variables année d'éducation, nombres d’enfant encore vivant, échelle de dépression, fréquence d’activité physique, nombres de visite chez le  médecin durant les 12 derniers mois et met en évidence un aperçu globale des différentes caractéristiques caractérisant les personnes âgées en Allemagne.
+	
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|l|l|c|c|c|c|}
+			\hline
+			\textbf{Variables} & \textbf{Obs} & \textbf{Mean} & \textbf{Std. dev}  & \textbf{Min} & \textbf{Max}  \\ 
+			\hline
+			Nombres d’année d'éducation & 1412 & 12.40722 & 3.172665 & 0 & 25 \\
+			\hline
+			nombres d'enfants vivants & 1412 & 1.956799 & 1.210152 & 0 & 8 \\
+			\hline
+			échelle de dépression & 1412 & 1.588527 & 1.676945 & 0 & 10 \\
+			\hline
+			nombres de visite chez un médecin durant les 12 derniers mois  & 1412 & 6.822238 & 8.005508 & 0 & 98  \\
+			\hline
+			Activité physiques  & 1412 & 2.137394 &	1.26484 & 1	& 4  \\
+			\hline
+			
+			
+		\end{tabular}
+		\caption{Statistiques univarié}
+		\label{tab:2}
+	\end{table}
+	
+	En premier lieu, on observe une moyenne de 12.42 année d'éducation avec un écart important de 3.2 année scolarité ce qui montre que la majorité des individus qui compose les échantillons ont au moins un niveaux minimum d'éducation secondaire  équivaut au baccalauréat et maximum équivalent à la licence.\\
+	 Nous avons également dans notre échantillon des individus qui n’ont fait aucune éducation. En revanche, nous avons une part important allant jusqu'à'à 25 années d'éducation mettant en évidence une multitudes des typologie d’individus suivant l'éducation avec des individus hautement diplômés et d'autres sans aucun diplômes d'études scolaires.\\
+	Cependant, Pour la variable nombre d'enfants vivant nous avons une moyenne de 1.96 enfant par famille, avec un écart de 1.22 enfants ce qui montre la présence des répondants qui ont plus ou moins de 2 enfants allant au minimum à aucun enfant et au maximum à 8 enfants.\\
+	En outre, pour la variable échelle de dépression nous avons un score moyen de 1.86 avec un écart de 1.88. ce qui montre que la majorité de nos individus ont un score de dépression variant a partir du faible ou pas dépressif à modéré, néanmoins on observe un score maximum de dépression qui s'élève à 10 ce chiffre montre qu'il subsiste une partie non négligeable avec des score élevé correspondant à des niveaux sévère de dépression.\\
+	En ce qui concerne, la variable activité physique intensive, elle enregistre une fréquence moyenne variant de 2.17 correspondant à une pratique d’activité physique allant d'une fois par semaine à un ou trois fois par mois, décrivant ainsi une  pratique modérée d' activité physique chez la majorité des répondants  de  l'échantillon. quant au nombre de visites chez un médecin enregistrent une moyenne annuelle de 8 visite  avec un écart de 10 visites révélant une dépendance au soin médicaux relativement élevé pour la majorité des personnes âgées. Néanmoins  ce niveaux de dépendance varient d’un individu à l'autre avec des fréquences quasiment nul pour certaines individus et en revanche ils existent des personnes  ayant une dépendance totale au soins enregistrant un maximum de 98 visites chez un médecin par an, ce qui correspond à 2 visites par semaine.\\ 
+	Ces résultats mettent en évidence une population avec la présence significative des caractéristiques relativement hétérogène en fonction du niveau d'éducation, du nombre d’enfants vivants , de la santé physique , de la dépendance au soins etc., constituant des facteurs de risques significatifs influençant l'état de santé mentale chez les personnes en âge avancée dans un contexte de vieillissement propres a l'Allemagne.\\
+	
+\subsubsection{\textit{Statistiques de la variable dépression}}
+	Représentant la part dépressive de personnes âgée de 60 ans et plus au sein de la population allemande.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{fig1}
+		\caption{fig1}
+		\label{fig1:la variable dépression}
+	\end{figure}
+	
+	En premier lieu, nous pouvons observer que 910 sur 2959 individus âgée de 60 ans et plus soient la majorité de l’échantillons représentant 64.45 \% ne présentent pas des symptômes dépressifs, néanmoins 502 déclarent soit 35.55 \% représentant un chiffre des symptômes dépressifs parmi les personnes âgées extrêmement élevés, mettant ainsi en évidence l’existence de problème de santé mentale affectant de façons particulièrement distinct la tranche des personnes âgées allemande par rapport au reste de la populations.\\
+
+	\subsubsection{\textit{statistiques de la variable genre}}
+	
+	Ce tableaux montre la représentativité de nos individus suivant le genre.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{fig3}
+		\caption{}
+		\label{la variable genre}
+	\end{figure}
+	
+	Premièrement, nous constatons que les femmes est le genre le plus représenté avec 745 individus soit 52.76 \% de l’échantillon constituée des femmes en revanche les homme sont représentés avec un nombres moins élevés de 667 individus soit 47.24 \% de l'échantillon.\\
+	 Ces chiffres montrent que les femmes sont le genre le plus nombreux parmi les 60 ans et plus, expliquant notamment selon un certains nombres des travaux antérieurs pourquoi  les femmes représentent la catégorie la plus exposée et ou les symptômes de dépression sont les plus importants parmi les personnes âgées.\\
+	
+	\subsubsection{\textit{Statistique de la variable échelle de dépression }}
+	
+	Ce tableau montre l’échelle de dépression sur un score allant de 1 à 12, du moins ou pas dépressif au plus dépressif (dépression sévère).
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{fig4}
+		\caption{}
+		\label{la variable échelle de dépression}
+	\end{figure}
+	
+	Premier constat , l’écrasante majorité de notre échantillons disposent des scores de dépression allant de 0 à 1 soient pas dépressif à des symptômes très légers ce qui correspond à 56.80 \% qui ne déclarent pas des symptômes dépressifs et environs 43 \% déclarent des symptômes dépressifs très légers situant dans le score de 1 à 5.\\
+	En revanche un pourcentage non significatif  allant de score 5 à 12  présentent des niveaux de dépression de modéré à sévère soient aux environs de 10 \%. Ces chiffres montrent le niveaux de l’ampleur du phénomène notamment chez les sujets âgés qui dans l’écrasante majorité déclarent avoir des symptômes dépressifs. Cependant à mesure qu’on monte dans le niveau de score dépression, le pourcentage des dépressifs baisse en allant de la dépression modérée ou pas dépressive vers  des symptômes dépressifs sévères. On peut  nettement observer que la majorité des dépressifs enregistre un niveau de dépression dite modérée. Néanmoins ils subsistent une minorité non négligeable ayant des symptômes dépressifs sévères.\\
+	Globalement même si la majorité de l’échantillon autour de 60 \% ne déclarent pas des symptômes dépressifs, la dépression se révèle un phénomène  touchant aux personnes âgées  avec 37 \% des individus de l’échantillon affecté avec des niveaux de dépression allant de modéré à sévère.\\
+	
+	\subsection{Statistiques bivariée} 
+	\subsubsection{\textit{Tableau  croisés pour les variables genre et dépression} }
+	ce tableau croisée met en évidence la répartition des symptômes dépressifs par genre.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{fig5}
+		\caption{Statistiques croisées pour la variable Genre et dépression}
+		\label{fig:}
+	\end{figure}
+
+note : existe un lien de dépendance entre la dépression et le genre ; teste de chi-2; p-value = 0;00 (CF. voir teste de chi2 entre genre et dépression) \\
+En premier lieu, nous observons une répartition très inégale de la dépression suivant le genre, sur l’effectif total des hommes 29 \% sont dépressifs, en revanche sur l’effectif total des femmes 44 \% ont des symptômes dépressifs. Ces résultats montrent que les femme sont de loin les plus touchés par le phénomène de la dépression que les hommes et révèlent une différence significative en termes de symptôme dépressif suivant le genre.\\
+ \subsubsection{\textit{Tableaux croisés pour les statuts matrimonial et dépression}} 
+Ce tableau ci-dessous révèle  la prédominance des symptômes dépressifs suivant le statut matrimonial de l’individu.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig6}
+	\caption{Tableau 7}
+	\label{fig:fig6}
+\end{figure}
+
+
+Les résultats\footnote{note: il existe un lien de dépendance entre la dépression et le genre ; teste de chi-2; p-value = 0.00 1 (CF. voir teste de chi2 entre situation matrimoniale et dépression)} ci-dessous montrent l'existence significatifs d’écart dans la prédominance des symptômes dépressifs suivant le statut matrimonial de l’individu.\\
+Les individus vivant en couple enregistrent parmi les plus faibles scores de dépression, quant aux individus déclarant être avec un partenaire enregistrent le score de dépression le plus faible de toute l’échantillon. Cependant à partir  des individus déclarants être marié mais vivant séparément la score de dépression commence a grimpé enregistrant des symptômes dépressifs qui sont supérieur au score de dépression de l’échantillon avec 6 dépressifs contre 10 non dépressifs soit  un pourcentages des dépressif qui s’élèvent 60 \%  parmi les   (marier et vivant séparément). En outre, les individus qui n’ont jamais été mariés déclarent des symptômes de dépression inférieur à la moyenne, mais très proche de celle de l’échantillon (la moyenne globale de dépression). En revanche les divorcé enregistrent des score de dépression parmi les plus élevés avec 29 dépressifs sur un totale des divorcé de 72 soit 40 \% parmi cette catégorie déclarent avoir des symptômes.\\
+Finalement la catégories enregistrant le record du plus grand nombres  des dépressif est la catégorie veufs  sur un totale 143 individus veufs 73 déclarent être atteint par des symptômes dépressifs soit un pourcentage des dépressifs parmi les veufs qui s’élèvent à 51 \% soit plus de la moitié du groupe. Ces résultats montrent que les personne vivant une relation ou ayant des partenaires présentent un nombre des dépressifs les plus faibles, en revanche les personnes divorcés ou veufs enregistrent les plus grand nombres des dépressifs mettant en évidence l’importance des facteurs de lien et relation social dans la détermination de la santé mentale des sujets âgées.\\
+
+\subsubsection{\textit{Statistiques descriptives croisé pour les variables enfant vivants et dépression }}
+Ces statistiques mettent en évidence la distribution des dépressifs suivants les nombres d’enfants encore vivants.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig7}
+	\caption{Tab 8}
+	\label{ enfant vivants et dépression}
+\end{figure}
+
+L’analyse du  tableau ci-dessus met en évidence  des différences significatives en termes du de la répartition des personnes ayant des symptômes dépressifs suivant le nombre d’enfants.\\
+Le premier constat est que les répondants qui n’ont pas d’enfants enregistrent un nombres de dépressif qui s'élèvent à 139 individus sur un total de 413 soit une proportion des dépressif parmi cette catégories de 33.65 \% ce qui est inférieur à la moyenne générale faisant des personnes âgée sans enfant, la catégorie enregistrant le plus faible nombre de dépressifs.\\
+La catégorie ayant un à deux enfants enregistrent un nombre des dépressifs nettement plus élevé avec un nombre de dépressifs de 658 individus sur un total de 1775 soit une proportion des dépressifs de 37 \%  ce qui est équivalent à la moyenne globale de dépressifs de l'échantillon.
+En outre la catégorie ayant 3 à 4 enfant détient aussi des proportions qui sont supérieur aux catégories  allant de 1 à 2 enfant avec des effectifs qui s'élèvent à 205 sur un total de 508 répondants pour les individus ayant trois enfants vivants et un effectifs de 67 dépressifs sur un total de 159 pour les individus ayant quatre enfants vivants. soient une proportion confondues des dépressifs pour les deux catégories qui s’élève à 40,77 \%. 
+Cependant, la catégorie allant de 5 enfant et plus détient les plus grands proportions des dépressifs, néanmoins avec des effectifs très faibles qui s’élèvent à 29, 6, 5, 0, 0, 2  pour les répondants ayant  5, 6, 7, 8, 10, 12 enfants vivants avec des proportions respectives de 53 \%, 32 \%, 63 \%,  et 100 \% des dépressifs pour les parents ayants 12 enfants.\\
+Ces résultats montrent une tendance globale ou les risques d’avoir des symptômes dépressifs est associé  aux nombres d’enfants vivant, notamment la probabilité d’attraper des symptômes dépressifs devient de plus en plus élevée  à mesure que le nombre d’enfants augmente.\\
+ Cependant cette tendance reste non significative avec une probabilité pour le teste bilatérale  P = 0.23 ce qui est au-dessus du seuil standard de 0.05 \footnote{(CF. voir test de student entre les variables nombres d’enfants vivant et la dépression)}  et n’est pas dite ou liée directement au nombres d’enfants.\\
+En revanche cette corrélation peut s'expliquer par des facteurs liée à la pression, au stresse ou des antécédents de dépression généré par  les coûts et les défis liée à l'élévation des enfants depuis le bas âge jusqu'à leurs réussites éducatives et professionnelles. \\ 
+
+\subsubsection{\textit{Statistiques croisés descriptives pour les variables santé physique et dépression }}
+
+Ce tableau met en évidence comment la santé physique influe sur la santé mentale de l'individu.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig8}
+	\label{fig:santé physique et dépression}
+\end{figure}
+
+Tout d’abord, une première analyse révèle une dégradation de la santé mentale qui est corrélée positivement à celle de la santé physique. 
+En effet la première catégorie ayant un niveau de santé physique jugé excellente  enregistre le plus faible effectifs des individus mais aussi le plus faible effectif des dépressif  de 35 sur un total de 143 individus mettant en évidence une plus faible proportion des individus ayant une excellente santé au sein de l'échantillon soit une proportion de 5 \% sur le total de l'échantillon, mais aussi la plus faible proportion des dépressifs parmi la catégorie ayant une excellente santé soit 24 \% des dépressifs.
+En outre, la catégories avec la mention très bonne santé  enregistre un nombre d’effectif  qui s’élève à un effectifs de 511 individus soit  une proportion 17.26 \% sur le total qui compose l'échantillon avec un nombre des dépressifs de 110 sur un effectifs total de 511 individus composant cette catégories, soit une proportion de  21.5 \% ayant des symptômes dépressif sur la catégories enregistrant une très bonne santé
+Cependant, à partir de la mention bonne santé la proportion des dépressifs commence à grimper, avec un nombre de dépressifs représentant  une proportion de 31.35 \% du total ayant la mention bonne santé, néanmoins le nombre des dépressifs reste en dessous de la moyenne général de dépression. Cependant la catégorie ayant une santé physiques jugé passable enregistrent un nombres des dépressifs plus important avec une proportion qui s'élève à 49.64 \% des dépressifs soit 1 personnes sur 2 est atteint par des symptômes dépressifs mettant en évidence un niveaux de vulnérabilité élevé parmi cette catégorie.\\  
+En outre la dernière catégorie composé de la catégorie des personnes âgées ayant un état de santé physique perçu comme mauvaise  détient le plus grand record de dépression enregistrant un nombre d'effectifs des dépressifs largement supérieur aux effectifs des non dépressif avec une proportion des dépressif largement supérieur à la moyenne de l'échantillon qui s’élève à 69 \%.
+Ces résultats montrent qu’il existe une corrélation négative entre la dépression et le niveau de santé physique qui est significative chi2 = 82 auquel est associé une probabilité nulle (CF. voir le test de chi2 entre le variable santé physique et dépression), cette corrélation est bien illustrée sur ce graphique.
+
+notamment les  chances d’attraper des symptômes dépressifs sont plus élevées pour les individus n’ayant pas une bonne santé physique. En revanche, les individus ayant une bonne santé physique auront moins de chance d’attraper des symptômes dépressifs en âge avancé. 
+ 
+ 
+ 
+\subsection{Statistiques comparatives des groupes}  
+ 
+Dans cette partie nous examinons les différents types d’association existant entre les variables, le but est de savoir quelles sont les variables indépendantes ou explicatives ayant un impact significatif sur la variable dépendante à expliquer, pour cela nous allons effectuer des tests pour mettre en évidence les associations qui sont significatives.
+   
+\subsubsection{\textit{test de chi2 entre les variable genre et dépression}}
+
+Ce test de chi2, nous permet d'évaluer l'existence d’une éventuelle relation d'indépendance ou de dépendance entre les variables dépression et genre
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig10}
+	\caption{}
+	\label{fig:fig10}
+\end{figure}
+
+Nous avons un chi2 = 39.0785 auquel est associé une probabilité nulle, ce qui est inférieur au seuil de 0.05, donc on peut confirmer l'hypothèse de dépendance, révélant  l'existence d’association significative entre la variable dépression et genre. Cependant ces résultats confirment aussi  l'hypothèse selon lesquelles en âge avancée, les personnes de sexe féminin enregistrent une plus grande prévalence à la dépression.
+
+\subsubsection{\textit{test de chi2 entre le variable situation matrimoniale et dépression}}
+
+Dans partie nous allons analyser le lien entre la situation matrimoniale et la dépression, entre autres vérifier s' il y a des variations significatives dans la prévalence à la dépression en fonction de la situation matrimoniale des individus âgées .
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig11}
+	\caption{}
+	\label{fig:fig11}
+\end{figure}
+
+Cependant, nous observons une probabilité nul associé à un chi2 = 20, ce qui est en dessous du seuil standards de 0.05 et donc on peut rejeter l'hypothèse d'indépendance, notamment on peut confirmer l’existence d’un relation de dépendance significative entre la prévalence à la dépression et la situation matrimonial de l’individus.
+
+\subsubsection{\textit{Test de student entre les variables nombres d’enfants vivant et la dépression}}
+
+ce test nous permet d’effectuer une comparaison des  moyennes du nombres d’enfants afin de savoir s’il y’a des différences significatifs entre les deux catégories les dépressifs et les non dépressifs en fonction du nombres d’enfants vivant.. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig12}
+	\caption{}
+	\label{fig:fig12}
+\end{figure}
+
+Nous avons la probabilité  d’avoir des moyenne différentes = 0.11 ce qui est au-dessus du seuil standard de 0.05 donc on rejette l'hypothèse non nul de différence de moyenne, notamment on peut confirmer qu' il n'y a pas de différence significative de moyenne d’enfants suivant la prévalence a la dépression. En outre ce chiffre montre qu' il Ya pas de lien d'association ou causalité significatifs entre le deux variables notamment le nombre d’enfants vivant n'exerce pas d'influence significatifs sur la prévalence à la dépression des personnes âgées.
+
+\subsubsection{\textit{Test de chi2 entre le variable santé physique et dépression}}
+
+Nous utilisons ce test afin de vérifier l'existence d'éventuels liens d’association existant entre la santé physique perçue et la prévalence à la dépression. Entre autres les différentes auto-perception des états de santé physique ont-ils un impact significatifs sur la prévalence à la dépression en âge avancée.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig13}
+	\caption{}
+	\label{fig:fig13}
+\end{figure}
+
+En effet on observe un chi2 = 82 auquel est associé une probabilité nul qui est au-dessous du seuil standard de 0.05 en conséquence on rejette l'hypothèse d'indépendance entre les deux variables. notamment on peut confirmer l'existence d’association de type dépendance et donc les différentes auto-perception des états de santé physique ont un impact significatif sur la prévalence à la dépression en âge avancée.
+
+\section{Modèles économétriques}
+
+\subsection{Régression logistiques(méthodologie)} 
+
+La régression logistique est dite un modèle de classification utilisé avec des variables à expliquer  binaires ou à plusieurs modalités, en outre dans cette section nous allons évoquer la régression logistiques a variable à expliquer binaire.\\
+modèle fréquemment utilisé dans plusieurs domaine parmi lesquelles l'économie et l'épidémiologie  pour prédire les probabilités associées à des caractéristiques propres à une catégories d’individus en prenant l’exemple de la dépression, ce modèle permet de déterminer une catégorisation entre les dépressif et les non dépressifs en affectant des probabilités de risques plus ou moins élevés en fonction des variables explicatifs qu’un individu a d’attrapé des symptômes dépressif .
+\subsubsection{\textit{différence avec les régressions linéaires }}
+La régression linéaires sont des modèles  avec des variables à expliquer quantitatives non bornés incompatible avec la modélisation de variables à expliquer de type binaires contrairement aux modèles logistiques qui sont des probabilités qui se situent entre 0 et 1 et donc bornée.
+graphiquement la modélisation avec un modèle linéaire de probabilité  cela se traduit de cette manière, On a  la forme :
+
+ $$P(y) = b_0 + b_1x_1 + - - - +  b_nx_n $$ 
+
+on’ a une un modèle de type linéaire et le problème avec ce modèle on peut l’apercevoir notamment avec la droite bleu de régression qui dépasse les bornes 0 et 1 
+ 
+ \begin{figure}[h!]
+ 	\centering
+ 	\includegraphics[width=0.29\linewidth]{fig14}
+ 	\caption{représentation graphique du modèle à probabilité linéaire}
+ 	\label{fig:fig14}
+ \end{figure}
+
+Si on essaye d'interpréter au-dessus de $ y = 1 $ c'est dire les probabilités d’avoir des symptômes dépressifs en âgée avancée était supérieur à 1, et en dessous de zéro on peut avoir des probabilités inférieur a zéro.
+ 
+le modèle de régression logistique permet de résoudre les problème lieu aux bornes, car il est borné .
+ce modèle est de la forme suivante :  $$ P(Yi = J/X) = \dfrac{1}{1 + e^{-(B0 +B_1x_1 + -- + b_nx_n)}} $$.
+graphiquement on aura :
+
+ \begin{figure}[h!]
+ 	\centering
+ 	\includegraphics[width=0.3\linewidth]{fig15}
+ 	\caption{ représentation graphique du modèle logit}
+ 	\label{fig:fig15}
+ \end{figure}
+ 
+ Cette modélisation permet de situer toutes les probabilités entre 0 et 1.
+ Cependant dans notre exemple, nous avons une population qui est scindé en 2 catégories les non dépressifs et les dépressif et si la  $P(Yi = O/X)$ , Cela implique que y est contenu dans l'intervalle $[ 0  ,  0.5 [$ représentant les non dépressifs et si la  $P(Yi = 1/X)$  , Cela implique que $y$ est contenus dans l’intervalle $[ 0.5  ,  1 ]$ représentant les dépressifs avec la $ P(yi = 1/xi) = \dfrac{1}{1 + e^-{(bx_i)}}$ . 
+ 
+ \subsubsection{Logit ordonnée à plusieurs modalités} 
+ 
+ modèle de logit utiliser pour ajuster une variable  à expliquer ordinale avec plusieurs modalités, il consiste à estimer la probabilité qu’une observation appartient a une catégorie spécifique. cependant ils se différentie avec une logit multinational en tenant compte de l’ordre dans l’estimation des probabilisés. Ce modèle est généralement un système d’équation, Comme dans notre variables on’ a 12 modalité, on’ aura :
+ 
+ 
+\begin{equation}
+	\left\{
+	\begin{aligned}
+		P(Y = 0 \mid X) &= \dfrac{1}{1 + e^{X_1 \beta_1} + e^{X_2 \beta_2} + e^{X_3 \beta_3} + \cdots + e^{X_{12} \beta_{12}}} \\ 
+		P(Y = 1 \mid X) &= \dfrac{e^{X_1 \beta_1}}{1 + e^{X_1 \beta_1} + e^{X_2 \beta_2} + e^{X_3 \beta_3} + \cdots + e^{X_{12} \beta_{12}}} \\  
+		P(Y = 2 \mid X) &= \dfrac{e^{X_2 \beta_2}}{1 + e^{X_1 \beta_1} + e^{X_2 \beta_2} + e^{X_3 \beta_3} + \cdots + e^{X_{12} \beta_{12}}} \\  
+		P(Y = 3 \mid X) &= \dfrac{e^{X_3 \beta_3}}{1 + e^{X_1 \beta_1} + e^{X_2 \beta_2} + e^{X_3 \beta_3} + \cdots + e^{X_{12} \beta_{12}}} \\ 
+		P(Y = 12 \mid X) &= \dfrac{e^{X_{12} \beta_{12}}}{1 + e^{X_1 \beta_1} + e^{X_2 \beta_2} + e^{X_3 \beta_3} + \cdots + e^{X_{12} \beta_{12}}}
+	\end{aligned}
+	\right.
+\end{equation}
+
+
+
+
+
+ \subsubsection{Odds ratio et interprétations}
+ 
+ Dans ce cas, chaque équation représente une alternative, ainsi pour faciliter l’interprétation généralement soit on choisit une modalité ou alternative de référence dans le cas contraire le logicielle choisie toujours la première  alternative comme référence, en outre les coefficients s’interprètes par rapport à l’alternative de référence
+ Autre méthode d’interprétation est de calculer les odds ratio. Les ODDS RATIO : sont des rapports des cotes c’est dire rapport de rapport de probabilité qui permet de comparer les nombres de chance de réalisation d’un évènement par rapport à un autre 
+ Dans notre exemple les odds ratios calcule le nombres de chance qu’un individus tombe en états de dépression  sachant la présence d’un facteurs de risques donnée par rapports à son absence  
+ Cependant pour mieux ajuster les deux modèle dans ce cas précis des modèles logit, il est primordial d’effectuer une exploration en amont des données pour vérifier l’existence des données manquantes et des valeurs aberrantes qui pourrait générer des erreurs de précision dans l’estimation des coefficients.
+ 
+ \subsubsection{Matrice de corrélation des variables explicatifs}
+ 
+ le matrice ci-dessous représente les résultats des corrélations entre les variables explicatives, chaque valeur dans ce matrice est une corrélation situant entre -1 et 1 entre deux variables. Une valeur proche de zéro indique une corrélation faible entre deux variables explicatives, en revanche une valeur proche de -1 ou1 indique une forte corrélation soit positive ou négative.\\
+ 
+ Cependant, l'objectif de ce matrice est de vérifier l’existence d’une multicolinéarité entre les variables explicatif, se traduisant par une forte corrélation positif ou négatifs entre deux ou plusieurs variables explicatifs de type :
+ 	\begin{equation*}
+ 		x_1 = c_2 x_2, \quad C_2 = C_1 x_1 + C_2 x_2 + \cdots + C_n x_n, \quad \text{avec } C_1, \ldots, C_n > 0.
+ 	\end{equation*}
+ 
+ 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig16}
+	\caption{}
+	\label{fig:fig16}
+\end{figure}
+
+Parmi les coefficient de corrélation de persan ci-dessus aucune n’est en dessous du seuil entraînant des problème de multicolinéarité de 0.8, notamment on peut constater qu’il n'y a pas un problème de multicolinéarité susceptible d'entraîner des difficultés dans l’estimation des coefficients des différentes variables. En outre on observe que l’essentiel des corrélation sont à majorité très faibles ou légèrement élevées. mettant en évidence l’existence d’une indépendance entre les explicatifs, ce qui est une situation propice à l'élaboration d’un modèle logit robuste.
+
+\subsubsection{Gestion de valeur aberrants}
+
+La présence des valeurs aberrantes peut avoir un impact sur la précision du modèle en fournissant des prédictions inexactes. Cependant le Z-score  permet de corriger ce problème.
+Le $Z-score$ est une statistique associée à chaque variable pour chaque  observation permettant de détecter la présence d’une valeur aberrante au sein d’une observation . notamment tous les  $Z-score$ qui se situent hors de  l’intervalle $[-3 , 3 ]$ constituent des valeurs aberrantes.\\
+
+\textit{Image d'illustration des observation contenant des valeurs aberrants}
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\linewidth]{fig17}
+		\caption{}
+		\label{fig:fig17}
+	\end{figure}
+\newpage
+Après avoir généré les Z-score  pour les différentes variables explicatives, nous avons détecté la présence des valeurs aberrantes dans 160 observations qui ont été supprimées réduisant le nombre d’observations de notre échantillon.
+
+\section{Spécifications des modèles économétriques} 
+
+En tenant compte de la nature de nos données (variables d’intérêts), nous avons décidés d’effectuer nos différentes analyses a l’aides des modèles logistiques étant les plus compatibles pour  ajuster nos variables d’intérêt en fonction de nos données.\\
+L’objectif de ces  modèle de régression logistiques est d’identifier un certaines nombres des facteurs de risques en lien avec la prévalence a la dépression chez les personnes âgées. le choix d’inclusion des variables a été faite en tenant compte de l’importance de la variable entant que composante explicatifs du modèle tout en évitant d’inclure les variables avec des grande probabilités d’homogénéités et après avoir tester plusieurs modèles sans améliorer la qualités du modèle ,nous avons décidés d’inclure aucun paramètre d’interactions et terme quadratique.
+
+
+\subsection{Modèle 1 : application de la Régression logistique binaire au données}
+
+A travers ce modèle, un certaines nombres de facteurs de risques ont été identifiées. 
+\begin{table}[ht]
+	\centering
+	\caption{Régression logistique}
+	\begin{tabular}{lcccccc}
+		\toprule
+		\textbf{Dépression} & \textbf{Odds ratio} & \textbf{Std. err.} & \textbf{z} & \textbf{P>|z|} & \textbf{[Intervalle de confiance à 95\%]} \\
+		\midrule
+		\textbf{genre} (ref homme) & & & & & \\
+		\quad Femme & 2.180843 & 0.5758171 & 2.95 & 0.003 & 1.299805--3.65907 \\
+		heures travailler par semaine & 0.9833523 & 0.0083081 & -1.99 & 0.047 & 0.9672029--0.9997715 \\
+		Nombres annuelle de visites chez un médecin & 1.05474 & 0.0246369 & 2.28 & 0.023 & 1.007542--1.10415 \\
+		\textbf{Maladies chroniques} & & & & & \\
+		\quad 1 maladie & 1.452917 & 0.3879691 & 1.40 & 0.162 & 0.8608878--2.452084 \\
+		\quad 2 maladies & 1.484061 & 0.585908 & 1.00 & 0.317 & 0.684537--3.217411 \\
+		\quad 3 maladies & 1.311851 & 0.9793281 & 0.36 & 0.716 & 0.3036982--5.666655 \\
+		\textbf{zone de localisation} (Ref Très grande ville) & & & & & \\
+		\quad La banlieue ou les environs d'une grande ville & 3.02058 & 1.363498 & 2.45 & 0.014 & 1.246969--7.316864 \\
+		\quad Une grande ville & 3.341664 & 1.759169 & 2.29 & 0.022 & 1.19086--9.377023 \\
+		\quad Une petite ville & 2.60851 & 1.053013 & 2.38 & 0.018 & 1.182432--5.754516 \\
+		\quad Une zone rurale ou un village & 1.383939 & 0.5631518 & 0.80 & 0.425 & 0.6233705--3.072469 \\
+		\textbf{fréquences d'activité physique} (Ref jamais) & & & & & \\
+		\quad plus d'une fois par semaine & 0.7945085 & 0.2526446 & -0.72 & 0.469 & 0.4260163--1.481736 \\
+		\quad une fois par semaine & 0.298699 & 0.1253695 & -2.88 & 0.004 & 0.1312105--0.6799841 \\
+		\quad une à trois fois par mois & 0.5897068 & 0.2987242 & -1.04 & 0.297 & 0.2184984--1.591564 \\
+		\textbf{La constante} & 0.2686271 & 0.1632321 & -2.16 & 0.031 & 0.0816422--0.8838632 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+En premier lieux, Nous avons un probabilité nul pour le test associée au chi2 qui évalue la significativité globale, en conséquence nous un modèle qui est de façon globale hautement significatif. 
+
+\subsubsection{Analyse et interprétations} 
+
+\subsubsection*{\textbf{\textit{La prévalence à la dépression}}}
+
+Les résultats de notre premier modèle d'analyse (voir table 3) montrent un certaines nombres des facteurs de risques hautement significatifs.\\
+
+Avec un $odd ratio = 2.18$, $IC$ à $95\%  = [1.29 \quad 3.65]$, montre que les femmes allemands âgées de 60 ans et plus ont 2.18 fois plus de chance de tomber en dépression par rapports aux hommes. Avec une  $P-value = 0.003$, suggérant un niveau élevé de significativité, mettant en évidence l’existence d’un lien forts entre le sexe féminin et la prévalence a la dépression.\\
+
+Cependant la zone d’habitation  se révèle déterminante dans la prévalence a la dépression, en Allemagne les habitants de 60 an et plus des banlieues ou qui sont dans les environs d’une très grande ville ont 3 fois plus chance de tomber en dépression que celles qui habitent dans des très grandes agglomérations comme Berlin ou Hambourg etc. ayant un  $OR = 3.02$,  $IC$ à $95 \% = [1.24 \quad 7.31]$. En outre les personnes âgées habitant dans des villes de taille moyen comme Heidelberg qui est l’équivalent de Béziers en France ont $3.34$ fois plus de chance de présenter une prévalence à la dépression que ceux habitant dans des très grandes agglomérations comme Berlin, Paris ou Marseille, étant le rapport de côte de prévalence à la dépression le plus élevé enregistrée parmi les différentes zone d’habitations avec un OR = 3.34 et un $IC$ à $95 \%  = [1.19 \quad  9.37]$, auquel est associé un $P-value = 0.02$.  Les habitants allemands en âge avancées des petites villes quant à eux enregistrent $2.6$ fois plus de chance de développer des symptômes dépressifs par rapport aux citadins des grandes agglomérations. En outre, les ruraux présentent la plus faible côte de prévalence à la dépression par rapport aux habitants des grandes agglomération, avec $1.3$ fois plus de chance de risque de dépression, une côte qui est statistiquement non significatif.\\
+
+Autre facteur ayant un impact significative sur la prévalence a la dépression est la fréquence de pratique d’une activité physique, avec un  $OR = 0.3$ et un $p-value = 0.004$, montre que les personnes de $60 ans$ et plus qui pratiquent une activité physiques d’une fréquence d’au moins une fois par semaine ont moins de chance de tomber en dépression par rapport à ceux qui ne pratiquent aucune activité  physique.\\
+
+Autre part, avec un $OR = 0.98$, $IC$ à $95 \% = [0.96   0.99]$, nous constatons aussi que,  La prévalence à la dépression est moins importante au niveaux des personnes enregistrant un nombres d’heures de travail annexe par semaines en dehors des heures de travail contractuelles ou heures supplémentaire(activités annexes). En revanche le taux de prévalence à la dépassions argumentent avec la hausse des fréquences de visite chez un médecin,($OR = 1.05$, $IC$ à $95\% = [1  1.10]$).
+
+
+\newpage
+
+\subsection{Modèle 2 :  Application de la régression logistique ordonnée}
+
+Ce modèle de régression logit ordonnée (voire table 4), vise à compléter nos analyse dans l’identification des facteurs de risques affectant la prévalence à la dépression chez les personnes âgées de 65 ans et plus en Allemagne et nous à permit de mettre en évidences d’autres causes de dépression.
+
+
+\begin{table}[ht]
+	\centering
+	\caption{Régression logistique Ordonnée }
+	\begin{tabular}{lcccccc}
+		\toprule
+		\textbf{Échelle de dépression} & \textbf{Odds ratio} & \textbf{Std. err.} & \textbf{z} & \textbf{P>|z|} & \textbf{[Intervalle de confiance à 95\%]} \\
+		\midrule
+		\textbf{Tranches d'âges} (Ref 70 ans et plus) & & & & & \\
+		\quad 40 à 49 ans & 22.5848 & 29.81782 & 2.36 & 0.018 & 1.698277--300.3474 \\
+		\quad 50 à 59 ans & 47.7044 & 58.36523 & 3.16 & 0.002 & 4.336437--524.7879 \\
+		\quad 60 à 69 ans & 30.67085 & 37.87484 & 2.77 & 0.006 & 2.726426--345.0309 \\
+		\textbf{genre} (Ref Homme) & & & & & \\
+		\quad Femme & 1.717153 & 0.3760682 & 2.47 & 0.014 & 1.117867--2.637715 \\
+		\textbf{santé physique} (Ref Mauvaise) & & & & & \\
+		\quad excellent & 0.1694993 & 0.1307578 & -2.30 & 0.021 & 0.0373698--0.7688029 \\
+		\quad très bien & 0.1125812 & 0.0839097 & -2.93 & 0.003 & 0.0261242--0.4851638 \\
+		\quad bien & 0.1973896 & 0.1414609 & -2.26 & 0.024 & 0.0484511--0.804165 \\
+		\quad passable & 0.4535355 & 0.3253157 & -1.10 & 0.270 & 0.1111871--1.849985 \\
+		Nombres annuelle de visites chez un médecin & 0.982573 & 0.0068793 & -2.51 & 0.012 & 0.9691818--0.9961492 \\
+		qualité de vie & 0.9904412 & 0.0033798 & -2.81 & 0.005 & 0.9838389--0.9970877 \\
+		fréquence annuelle de visite chez un médecin & 1.030284 & 0.0187525 & 1.64 & 0.101 & 0.9941777--1.067702 \\
+		\textbf{Maladies chroniques} & & & & & \\
+		\quad 1 maladie & 1.56871 & 0.3459326 & 2.04 & 0.041 & 1.018205--2.416851 \\
+		\quad 2 maladies & 1.219276 & 0.4282875 & 0.56 & 0.572 & 0.6124993--2.427159 \\
+		\quad 3 maladies & 1.030004 & 0.6860613 & 0.04 & 0.965 & 0.2791733--3.800179 \\
+		\textbf{petits enfants vivants} & 1.034313 & 0.0291835 & 1.20 & 0.232 & 0.9786674--1.093123 \\
+		\textbf{Zone de localisation} (Ref Très grande ville) & & & & & \\
+		\quad La banlieue ou les environs d'une grande ville & 3.152201 & 1.182903 & 3.06 & 0.002 & 1.51074--6.577154 \\
+		\quad Une grande ville & 5.185007 & 2.241761 & 3.81 & 0.000 & 2.221921--12.09958 \\
+		\quad Une petite ville & 3.966646 & 1.295343 & 4.22 & 0.000 & 2.091492--7.522996 \\
+		\quad Une zone rurale ou un village & 2.385618 & 0.7711566 & 2.69 & 0.007 & 1.266042--4.495249 \\
+		\textbf{Statut matrimonial} (Ref marié et cohabitent) & & & & & \\
+		\quad déclare un(e) partenaire & 3.98e-06 & 0.0018533 & -0.03 & 0.979 & 0-- \\
+		\quad marié vivant séparément & 4.310646 & 2.708401 & 2.33 & 0.020 & 1.258138--14.76919 \\
+		\quad Jamais marié & 2.041497 & 0.983012 & 1.48 & 0.138 & 0.7944789--5.245843 \\
+		\quad divorcé & 2.272953 & 0.8292097 & 2.25 & 0.024 & 1.111882--4.646463 \\
+		\quad veuf & 1.374256 & 0.6314906 & 0.69 & 0.489 & 0.5583781--3.382261 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
+
+Parmi les facteurs de risque identifier nous avons L’âge, notamment les personnes âgées 40 à 49 ans (OR = 22.58, P-value = 0.018), enregistrent 22 fois plus de chances de risques de dépression que la tranches d’âges de 75 ans et plus. La tranche d’âge de 50 à 59 ans $(OR =  47.7, P-value = 0.002)$ ont approximativement 48 fois plus de chances de risque d’avoir des symptômes dépressifs par rapports à la tranches d’âges de 75 ans et  plus  . En revanche nous constatons l’existence d’une très grande écart entre les 40 à 49 ans et les 50 à 59 ans, En effet La tranche d’âge de 50 à 59 ans ont un écart de côte de 22, soient vingt-deux fois plus de chance de risque de prévalence a la dépression par rapport au 40 à 49 ans, à cela s’ajoute les 60 à 69 ans $(OR = 31, P-value = 0.006)$, qui ont une écart de côte dans la prévalence à la dépression de 8, soient ils ont huit fois plus de risques de dépressions que ce de la tranche d’âge de 40 à 49 ans.\\
+Cependant, le constat est que la souffrance causant la dépression est plus présente durant les débuts de la vieillesses et le lien entre l’âge et la dépression est plus importante durant cette période précis de 50 à 70 ans , en revanche l’ampleur commence à diminuer à mesure que la personne s’approche des 80 à 90 ans.\\
+Nous avons également les individus qui ont une Bonne états de santé physique ont des probabilité de prévalence  a la dépression plus faible, notamment les personnes ayant une excellente santé physique $( OR = 0.16 , P-Value = 0.021)$ et une très bonne santé physique $(OR = 0.11, P-Value = 0.03)$ ont moins de chance de contracter des symptômes dépressifs par rapports a ceux qui ont un état de santé physiques mauvaise. Cependant les personnes qui ont une bonne qualité de vie $(OR = 0.99 , P-Value = 0.05)$ ont aussi moins de risques de développer des pathologies dépressifs en âge avancée. Quant aux maladies chroniques avec un $(OR = 1.56, P-Value = 0.04)$, ils sont associés à des risques élevés de dépression, mais ce risque est statistiquement significatif pour 1 seul maladies chronique diagnostiquée. Pour la situation matrimoniale, les individus marié mais vivant séparément et les personnes divorcé présentent des probabilités significatives de prévalence a la dépression plus élevés que ceux qui sont marié et cohabitent. 
+
+\section{discussion}
+
+Les résultats de deux modèles logistiques ont révélé un certaines nombres de facteurs de risques affectant la dépression chez les personnes âgées présentant notamment des similarités avec la littératures antérieurs et les hypothèses de notre étude.\\
+Nous avons l’hypothèse H1 , stipulant que les personnes de sexe féminin enregistrent une plus grande prévalence à la dépression est confirmé par les résultats de notre étude, notamment les résultats de la régression logistique binaire  indique que les femmes allemands âgées de 60 ans et plus ont 2.18 fois plus de chance de tomber en dépression par rapports aux hommes avec un $odd ratio = 2.18$, $IC$ à $95\%  = [1.29 – 3.65]$, Avec une  $P-value = 0.003$, ces résultats sont également en concordance avec les travaux antérieurs on peut notamment \cite{Cousteaux2008},\cite{phac_chronic_diseases}. L’hypothèse (H2) selon laquelle,  les pathologies constituent un facteurs de risque affectant la dépression chez les personnes âgées n’est pas confirmée par les analyse via la régression logistique binaire, mais néanmoins en partie confirmé au niveaux de la régression logistique ordonnées avec (OR = 1.56, P-Value = 0.04), les maladies chroniques sont associées à des risques élevés de dépression, Cependant dans cet étude le risque est statistiquement significatif pour 1 seul maladies chronique diagnostiquée ce qui est aussi en partie en cohérence avec d’autres études notamment \cite{Yunming2012},\citep{Hammami2012} même si des légers différence persistent au niveaux du nombres des pathologies chroniques a partir duquel l’individus commence à contracter des symptômes.\\
+En outre, la dernière hypothèse (H3), selon laquelle L'âge est un facteur de risque affectant la dépression en âge avancé a été largement confirmé, les résultats de la régression logistique ordonnée, notamment effet La tranche d’âge de 50 à 59 ans et les 60 à 69 ans avec des niveaux élevé de significativité, ont montré que les probabilité de tomber en dépression augmentent avec l’âge surtout suivant un ampleur phénoménale au début de la vieillesse. Cependant ces résultats sont adéquation avec un certaines nombres de travaux antérieures comme \citep{phac_chronic_diseases}.
+
+\subsection{\textbf{\textit{Constats supplémentaires  }}} 
+
+Le rôle de la zone d’habitation dans la prévalence a la dépression , les analyse avec la régression logistique ordonnée mais aussi binaires ont révélée l’importance de la localisation dans le risque de contracter des symptômes dépressifs. En effet, les fait d’habiter en dehors des grandes agglomérations est associées pour les individus en âge avancée a des risques de dépression très élevés avec des côte respectifs étant
+5 fois plus de risques pour  ceux qui habitent une ville de taille moyenne, 3 fois plus de risques pour les habitants de banlieues et les environs des grandes agglomérations, 3 fois plus de risque pour les habitant des petite villes et 2 fois plus de risques pour les ruraux, de tomber en dépression par rapports aux citadins des grandes villes., dans nos modèles d’analyse respectifs, la statut matrimoniale et La santé physique jouent également un rôle déterminant dans la prévalence à la dépression avec des probabilité de tomber en dépression faibles qui sont associée à une bonne santé physique et aux personnes marier et vivant avec leurs partenaires et inversement des probabilités élevées de risque dépressifs sont associées aux individus étant dans une situation matrimoniale tourné vers la solitude comme le divorce, vivre séparément de son conjoint et les personnes avec une mauvaise état de santé.
+
+\subsection{\textbf{\textit{Analyse critiques}}} 
+
+L’utilisation de deux modèle d’analyse et d’une base de données fiable permet d’améliorer la qualité de notre études, Cependant l’études présentent un certaines nombres de limitent qui méritent d’être évoquées, premièrement l’utilisations des variables explicatifs comme la fréquence de visite chez un médecin peut poser problèmes et présente un risque des biais d’homogénéité, dans le sens ou le lien de causalités et son importance entant que variables explicatifs sont difficile  à vérifier.
+
+Autre limite pouvant être source de problèmes est la non-inclusion d’aucune terme d’interaction ou quadratiques afin de contrôler d’éventuelles effets susceptibles d’être exercée par d’autres facteurs d’influence sur le niveaux de prévalence à la dépression. 
+
+L'étude met un accent particulier sur l’importance de la zone de localisations, ceux qui n’est pas trop fréquents dans une grande partie de revue de littérature auquel j’ai pu avoir accès.
+
+Malgré qu’une grande partie de nos résultats est cohérent avec beaucoup d’autres études, Certaines résultats de nos analyses présentent des carences en termes de similarités avec des études  antérieurs notamment, beaucoup d’études antérieurs ont trouvé un lien entre la dépression et plus d’une maladies chroniques. En revanche dans notre étude, le lien de causalité est significatif uniquement que pour une seul maladie chronique, Cette situation peut s’expliquer par les différences sociale, démographiques et culturelles qui différents d’un pays à l’autre
+
+Autre limites pourra concernés la généralisations de l’étude a d’autre populations en dehors de l’Allemagne, autrement tout généralisation dépendra du niveaux des similarités entre les pays ou les zone géographiques concernées.
+
+
+
+
+
+\section{Conclusion générale} 
+Les résultats des différentes analyse que nous avons effectué au sein de cette étude, dont l’objectifs est d’explorer différentes  cause de dépression chez une populations en âge avancée, ont mis en évidences les principaux facteurs  de risques affectant la dépression  chez les personnes âgées dans les cas de l’Allemagne.\\
+
+Premièrement, l’étude révèle que parmi les genre, les femmes présentent une plus grande prévalence a la dépressions ces résultats vient également confirmer l’hypothèse de départ de cet étude, cependant cette tendance est partagée par des nombreuses autres études similaire qui ont été mener dans le même domaine.
+Deuxièmement , la multiplication des maladies chroniques est associée un risque dépression, bien que ce lien de causalité reste très fragile, néanmoins nous avons un lien significative avec au moins une maladie chronique , ce qui pourra constituer un cas particulier propres au contexte social, démographique et ou épidémiologiques allemands
+L’âge en fin de vie se révèle aussi déterminant dans la prévalence à la dépression, surtout au début de la vieillesse marquée par une très grande prévalence a la dépressions et qui se modère par la suite à mesure que l’individus s’approche de 80 ans.
+La santé physique et la situation matrimonial jouent également un rôle cruciale dans la prédisposition en âge avancée face au symptômes dépressif.
+Finalement, ce deniers étant moins fréquents dans les littératures, le rôle joué par l’importance de la zone d’habitation dans la prévalence à la dépression se révèlent primordiales dans ce contexte allemands. Dans les deux modèle d’analyses, les personnes de 60 ans et plus localisées hors des très grandes agglomérations présentent des risques de dépressions nettement plus élevés que ceux habitants dans les grandes agglomérations comme Berlin ou l’équivalent de paris en France ou New-York aux états unis.\\
+
+Tout d’abord ces résultats révèlent un certaines nombres des difficultés propres aux personnes en âge avancées.
+Nous avons constaté que les début de vieillesse  correspond à la période la plus compliquées correspondant à la période intermédiaire entre la vie actives et la retraite.\\
+ 
+Cependant il est primordial de mettre en œuvre des politiques sociales et économiques pour améliorer le suivie et l’accompagnement des personnes durant cette périodes.\\
+
+En outre, un accent particuliers doit être fait pour améliorer le suivi des personnes âgées de sexe féminin à partir de leurs premiers jours de départs en retraites, mais aussi à partir de 75 ans et plus ou ils reprennent la côte de prévalence a la dépression. Cet accompagnement doit être d’autant plus important si la personne est dans un états patrimoniale où il vit seul notamment divorcé ou veuf.\\
+
+Des politiques doivent aussi être mise en œuvre pour améliorer les structures de soins et de l’aide aux personnes  âgées dans les petites villes et les zones ruraux.\\
+
+Nous recommandons également des mesures visant à réduire l’isolement des personnes âgées du reste de la sociétés.\\
+
+Finalement, vu la conjoncture démographiques actuelles an Allemagne et dans d’autres pays de l’union européens, ou l’on observe une accélérations du vieillissements de la populations au point que les experts tirent la sonnette d’alarme concernant la menace sur le remplacement des générations, cette tendance montre en parallèle une hausse de la part des personnes âgées dans la populations. Par conséquents, la mise en place des structure et d’un Eco-système  pour répondre aux besoins d’une populations des personnes âgées en plein croissance devraient constituer une priorité nationale.\\
+
+Cependant, notre étude se limite uniquement au cas de l’Allemagne, par conséquent, on est dans l’impossibilité de vérifier ou creuser certaines résultats obtenus en dehors de l’Allemagne, Cependant il est intéressant de creuser la question concernant l’effet de des zones d’habitations sur la prévalence a la dépression, mais aussi il est intéressant de conduire la question vers une étude comparative dans d’autre pays à fin de déterminer si on peut observer les même tendance ailleurs.
+
+
+
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+
+
+
+\section{Les Annexes}
+
+\textit{figure:1}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{fig9}
+	\caption{figure 1}
+	\label{fig:fig1O}
+\end{figure}
+		
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{"figure 2"}
+	\caption{}
+	\label{fig:figure-2}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{"figure 3"}
+	\caption{}
+	\label{fig:figure-3}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{"figure 4"}
+	\caption{}
+	\label{fig:figure-4}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{"figure 5"}
+	\caption{}
+	\label{fig:figure-5}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\linewidth]{"figure 6"}
+\caption{}
+\label{fig:figure-6}
+\end{figure}
+
+\end{document}
